@@ -1,7 +1,7 @@
-#!/usr/bin/env python2
-#
+#!/usr/bin/env python3
 # -*- coding: utf-8 -*-
 #
+# 	Copyleft  (C) 2021 by Helio Loureiro
 # 	Copyright (C) 2013-2016 by Ihor E. Novikov
 #
 # 	This program is free software: you can redistribute it and/or modify

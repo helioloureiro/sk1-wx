@@ -1,7 +1,8 @@
-#!/usr/bin/env python
+#!/usr/bin/env python3
 #
 #   Setup script for sK1 2.x
 #
+#   Copyleft  (L) 2021 by Helio Loureiro
 # 	Copyright (C) 2013-2018 by Ihor E. Novikov
 #
 # 	This program is free software: you can redistribute it and/or modify
@@ -22,15 +23,15 @@ from __future__ import print_function
 """
 Usage: 
 --------------------------------------------------------------------------
- to build package:       python setup.py build
- to install package:     python setup.py install
- to remove installation: python setup.py uninstall
+ to build package:       python3 setup.py build
+ to install package:     python3 setup.py install
+ to remove installation: python3 setup.py uninstall
 --------------------------------------------------------------------------
- to create source distribution:   python setup.py sdist
+ to create source distribution:   python3 setup.py sdist
 --------------------------------------------------------------------------
- to create binary RPM distribution:  python setup.py bdist_rpm
+ to create binary RPM distribution:  python3 setup.py bdist_rpm
 --------------------------------------------------------------------------
- to create binary DEB distribution:  python setup.py bdist_deb
+ to create binary DEB distribution:  python3 setup.py bdist_deb
 --------------------------------------------------------------------------.
  Help on available distribution formats: --help-formats
 """
@@ -263,14 +264,26 @@ src_script = 'src/script/sk1.tmpl'
 dst_script = 'src/script/sk1'
 fileptr = open(src_script, 'rb')
 fileptr2 = open(dst_script, 'wb')
-while True:
-    line = fileptr.readline()
-    if line == '':
-        break
-    if '$APP_INSTALL_PATH' in line:
-        line = line.replace('$APP_INSTALL_PATH', install_path)
-    fileptr2.write(line)
+if sys.version_info.major < 3:
+    while True:
+        line = fileptr.readline()
+        if line == '':
+            break
+        if '$APP_INSTALL_PATH' in line:
+            line = line.replace('$APP_INSTALL_PATH', install_path)
+        fileptr2.write(line)
+else:
+    with fileptr as input_data:
+        for line in input_data.readlines():
+            str_line = str(line)
+            if '$APP_INSTALL_PATH' in str_line:
+                str_line = str_line.replace('$APP_INSTALL_PATH', install_path)
+            str_line += '\n'
+            line = bytes(str_line, 'utf-8')
+            fileptr2.write(line)
+
 fileptr.close()
+fileptr2.flush()
 fileptr2.close()
 
 # Preparing setup.cfg

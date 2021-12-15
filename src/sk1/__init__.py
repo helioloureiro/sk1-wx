@@ -1,5 +1,6 @@
 # -*- coding: utf-8 -*-
 #
+#  Copyleft  (L) 2021 by Helio Loureiro
 #  Copyright (C) 2013-2018 by Ihor E. Novikov
 #
 #  This program is free software: you can redistribute it and/or modify
@@ -27,11 +28,16 @@ config = None
 
 
 def get_sys_path(path):
-    return path.decode('utf-8').encode(sys.getfilesystemencoding())
+    if sys.version_info.major < 3:
+        return path.decode('utf-8').encode(sys.getfilesystemencoding())
+    return path
 
 
 def get_utf8_path(path):
-    return path.decode(sys.getfilesystemencoding()).encode('utf-8')
+    if sys.version_info.major < 3:
+        return path.decode(sys.getfilesystemencoding()).encode('utf-8')
+    else:
+        return path
 
 
 def read_locale(cfg_file):
