@@ -1,5 +1,6 @@
 # -*- coding: utf-8 -*-
 #
+#  Copyleft  (L) 2021 by Helio Loureiro
 #  Copyright (C) 2013 by Ihor E. Novikov
 #
 #  This program is free software: you can redistribute it and/or modify
@@ -15,17 +16,17 @@
 #  You should have received a copy of the GNU General Public License
 #  along with this program.  If not, see <https://www.gnu.org/licenses/>.
 
-from actions import AppAction, ActionButton, ActionToggle
-from colorctrls import SbStrokeSwatch, SbFillSwatch, StyleMonitor
-from ctxmenu import ContextMenu
-from fillctrls import SolidFill, GradientFill, PatternFill
-from fontctrl import FontChoice, font_cache_update
-from minipalette import CBMiniPalette
-from palette import Palette
-from palette_viewer import PaletteViewer
-from strokectrls import DashChoice, CapChoice, JoinChoice, ArrowChoice
-from surfaces import Painter, RulerSurface, HRulerSurface, VRulerSurface, \
+from .actions import AppAction, ActionButton, ActionToggle
+from .colorctrls import SbStrokeSwatch, SbFillSwatch, StyleMonitor
+from .ctxmenu import ContextMenu
+from .fillctrls import SolidFill, GradientFill, PatternFill
+from .fontctrl import FontChoice, font_cache_update
+from .minipalette import CBMiniPalette
+from .palette import Palette
+from .palette_viewer import PaletteViewer
+from .strokectrls import DashChoice, CapChoice, JoinChoice, ArrowChoice
+from .surfaces import Painter, RulerSurface, HRulerSurface, VRulerSurface, \
     CanvasSurface
-from unitctrls import RatioToggle, BitmapToggle, ActionImageSwitch
-from unitctrls import StaticUnitLabel, StaticUnitSpin
-from unitctrls import UnitLabel, UnitSpin, AngleSpin
+from .unitctrls import RatioToggle, BitmapToggle, ActionImageSwitch
+from .unitctrls import StaticUnitLabel, StaticUnitSpin
+from .unitctrls import UnitLabel, UnitSpin, AngleSpin

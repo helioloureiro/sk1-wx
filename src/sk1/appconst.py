@@ -16,8 +16,8 @@
 #  along with this program.  If not, see <https://www.gnu.org/licenses/>.
 
 APPNAME = 'sk1'
-VERSION = '2.0'
-REVISION = 'rc5'
+VERSION = '3.0'
+REVISION = 'rc1'
 BUILD = ''
 
 OPENED = 0

@@ -1,5 +1,6 @@
 # -*- coding: utf-8 -*-
 #
+#  Copyleft  (L) 2021 by Helio Loureiro
 #  Copyright (C) 2013 by Ihor E. Novikov
 #
 #  This program is free software: you can redistribute it and/or modify
@@ -16,16 +17,16 @@
 #  along with this program.  If not, see <https://www.gnu.org/licenses/>.
 
 from wal import msg_dialog, error_dialog, stop_dialog, ync_dialog, yesno_dialog
-from filedlgs import get_open_file_name, get_save_file_name, get_dir_path
-from progressdlg import ProgressDialog
-from aboutdlg import about_dialog
-from pagedlg import goto_page_dlg, delete_page_dlg, insert_page_dlg
-from filelogviewer import filelog_viewer_dlg
-from paletteinfo import palette_info_dlg
-from palcoldlg import palette_collection_dlg
-from filldlg import fill_dlg
-from strokedlg import stroke_dlg
-from docprops import docprops_dlg
-from editdlg import edit_dlg, multiline_edit_dlg
-from logconsole import logconsole_dlg
-from docinfodlg import docinfo_dlg
+from .filedlgs import get_open_file_name, get_save_file_name, get_dir_path
+from .progressdlg import ProgressDialog
+from .aboutdlg import about_dialog
+from .pagedlg import goto_page_dlg, delete_page_dlg, insert_page_dlg
+from .filelogviewer import filelog_viewer_dlg
+from .paletteinfo import palette_info_dlg
+from .palcoldlg import palette_collection_dlg
+from .filldlg import fill_dlg
+from .strokedlg import stroke_dlg
+from .docprops import docprops_dlg
+from .editdlg import edit_dlg, multiline_edit_dlg
+from .logconsole import logconsole_dlg
+from .docinfodlg import docinfo_dlg

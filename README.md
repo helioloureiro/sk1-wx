@@ -1,14 +1,14 @@
-# sK1 2.0
+# sK1 3.0
 
 [![Build Status](https://app.travis-ci.com/sk1project/sk1-wx.svg?branch=master)](https://app.travis-ci.com/sk1project/sk1-wx) ![platform](https://img.shields.io/badge/platform-Linux-blue.svg) ![platform](https://img.shields.io/badge/platform-Windows-blue.svg) [![License: GPL v3](https://img.shields.io/badge/License-GPLv3-blue.svg)](https://www.gnu.org/licenses/gpl-3.0)
 
 <center>
 
-![sK1 2.0 under Ubuntu 21.10
+![sK1 3.0 under Ubuntu 21.10
 
 </center>
 
-sK1 2.0 is a cross-platform open source vector graphics editor similar to CorelDRAW, 
+sK1 3.0 is a cross-platform open source vector graphics editor similar to CorelDRAW, 
 Adobe Illustrator, or Freehand. sK1 is oriented for prepress industry, 
 so it works with CMYK color space and produces CMYK-based PDF and PS output.
 

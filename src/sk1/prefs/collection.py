@@ -1,5 +1,6 @@
 # -*- coding: utf-8 -*-
 #
+#  Copyleft  (L) 2021 by Helio Loureiro
 #  Copyright (C) 2015 by Ihor E. Novikov
 #
 #  This program is free software: you can redistribute it and/or modify
@@ -53,7 +54,7 @@ class CollectionButton(wal.ImageButton):
         loader = get_loader_by_id(SKP)
 
         for item in files:
-            print item,
+            print(item, end=None)
             pal_id = '0' * (4 - len(str(pid))) + str(pid)
             dir_path = os.path.join(OUT_PATH, 'id' + pal_id)
             palfile = os.path.join(IN_PATH, item)
@@ -62,10 +63,10 @@ class CollectionButton(wal.ImageButton):
             try:
                 palette = loader(self.app.appdata, palfile, None, False, False)
                 self.process_palette(dir_path, palette, pal_id)
-                print ' => OK'
+                print(' => OK')
                 pid += 1
             except:
-                print ' => False'
+                print(' => False')
 
     def process_palette(self, dir_path, palette, pal_id):
         palette_name = palette.model.name

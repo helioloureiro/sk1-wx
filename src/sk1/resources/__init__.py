@@ -1,5 +1,6 @@
 # -*- coding: utf-8 -*-
 #
+#  Copyleft  (L) 2021 by Helio Loureiro
 #  Copyright (C) 2013-2018 by Ihor E. Novikov
 #
 #  This program is free software: you can redistribute it and/or modify
@@ -16,9 +17,9 @@
 #  along with this program.  If not, see <https://www.gnu.org/licenses/>.
 
 import wal
-from acc_keys import GENERIC_KEYS
-from artids import ART_IDS
-from labels import LABELS
+from .acc_keys import GENERIC_KEYS
+from .artids import ART_IDS
+from .labels import LABELS
 
 ACC_KEYS = {}
 ACC_KEYS.update(GENERIC_KEYS)

@@ -120,8 +120,8 @@ VERSION = appconst.VERSION + appconst.REVISION
 DESCRIPTION = 'Vector graphics editor for prepress'
 AUTHOR = 'Ihor E. Novikov'
 AUTHOR_EMAIL = 'sk1.project.org@gmail.com'
-MAINTAINER = AUTHOR
-MAINTAINER_EMAIL = AUTHOR_EMAIL
+MAINTAINER =  'Helio Loureiro'
+MAINTAINER_EMAIL =  'helio@loureiro.eng.br'
 LICENSE = 'GPL v3'
 URL = 'https://sk1project.net'
 DOWNLOAD_URL = URL
@@ -262,29 +262,12 @@ if len(sys.argv) > 1:
 # Preparing start script
 src_script = 'src/script/sk1.tmpl'
 dst_script = 'src/script/sk1'
-fileptr = open(src_script, 'rb')
-fileptr2 = open(dst_script, 'wb')
-if sys.version_info.major < 3:
-    while True:
-        line = fileptr.readline()
-        if line == '':
-            break
-        if '$APP_INSTALL_PATH' in line:
-            line = line.replace('$APP_INSTALL_PATH', install_path)
-        fileptr2.write(line)
-else:
-    with fileptr as input_data:
-        for line in input_data.readlines():
-            str_line = str(line)
-            if '$APP_INSTALL_PATH' in str_line:
-                str_line = str_line.replace('$APP_INSTALL_PATH', install_path)
-            str_line += '\n'
-            line = bytes(str_line, 'utf-8')
+with open(src_script) as fileptr:
+    with open(dst_script, 'w') as fileptr2:
+        for line in fileptr.readlines():
+            if '$APP_INSTALL_PATH' in line:
+                line = line.replace('$APP_INSTALL_PATH', install_path)
             fileptr2.write(line)
-
-fileptr.close()
-fileptr2.flush()
-fileptr2.close()
 
 # Preparing setup.cfg
 ############################################################
